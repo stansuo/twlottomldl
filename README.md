@@ -6,7 +6,7 @@ My part-time experimental project. Using machine learning and deep learning to p
 - Purpose: Predict winning numbers of Taiwan lottery by ML/DL 
 - Rationale:
     - There's no perfectly fair lotto balls nor perfectly fair lotto machines  existed in this world. 
-    - The floating ,collision, and (therefore) results might be influenced by intrinsic and extrinsic factors
+    - The floating ,collision of balls, and (therefore) the results might be influenced by intrinsic and extrinsic factors
         - intrinsic factors: 
             - characteristics of balls and machines themselves
         - extrinsic factors: 
