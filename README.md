@@ -4,6 +4,14 @@ My part-time experimental project. Using machine learning and deep learning to p
 - For details, please visit my project journal on HackMD: [Project Journal - Taiwan Lottery Machine Learning (twlottomldl)](https://hackmd.io/@StanS/twlottomldl)
 ## Snapshot 
 - Purpose: Predict winning numbers of Taiwan lottery by ML/DL 
+- Rationale:
+    - There's no perfectly fair lotto balls nor perfectly fair lotto machines  existed in this world. 
+    - The floating ,collision, and (therefore) results might be influenced by intrinsic and extrinsic factors
+        - intrinsic factors: 
+            - characteristics of balls and machines themselves
+        - extrinsic factors: 
+            - local weather (e.g., Atmospheric pressure, humidity, temperature, etc.) at or near the opening time.
+            - gravitational forces from near by celestial bodies. (The moon should be the major source of force)
 - Language: Python
 - Techniques: 
     - Web scraping: requests, pyquery
@@ -14,6 +22,7 @@ My part-time experimental project. Using machine learning and deep learning to p
 - Data:
     - Historical lottery data
     - Weather data
+    - Moon-phase data
 - Link:
     - [Project_Journal _twlottomldl](https://hackmd.io/@StanS/twlottomldl)
     - [GitHub_Repo_twlottomldl](https://github.com/stansuo/twlottomldl)
