@@ -8,6 +8,7 @@ import urllib.parse
 import numpy as np
 import pandas as pd
 from multiprocessing import Pool
+from itertools import product
 
 def get_dates(start_date = datetime.date(2019, 1, 3), 
               end_date = datetime.date(2019, 1, 17) , 
@@ -102,7 +103,7 @@ def main(obs_name = "Neihu", obs_year = "test"):
     # formatting the file name with date & time su
     fmt = "%Y%m%dT%H%M%S"
     t = time.localtime()
-    df.to_csv(f'../output/weather_info_{obs_name}_{obs_year}_rtrv{time.strftime(fmt, t)}.csv', index=True,)
+    df.to_csv(f'../output/parallel/weather_info_{obs_name}_{obs_year}_rtrv{time.strftime(fmt, t)}.csv', index=True,)
 
     time_savefile_end = datetime.datetime.now()
     print(f'{obs_name}_{obs_year} file saved')
@@ -123,6 +124,5 @@ if __name__ == "__main__":
     obs_names = ["Neihu", "Songshan", "Dazhi", "Wenshan","Xizhi", "Shihding", "Shenkeng"]
     obs_years = ["2016", "2017", "2018", "2019", "2020"]
 
-    for name in obs_names:
-        for year in obs_years:
-            main(obs_name = name, obs_year = year)
+    with Pool(12) as p:
+        p.starmap(main, product(obs_names, obs_years))

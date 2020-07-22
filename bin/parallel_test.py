@@ -1,8 +1,14 @@
-from multiprocessing import Pool
+import multiprocessing
+from itertools import product
 
-def f(x):
-    return x*x
+def merge_names(a, b):
+    return '{} & {}'.format(a, b)
+
 
 if __name__ == '__main__':
-    with Pool(5) as p:
-        print(p.map(f, [1, 2, 3]))
+    obs_names = ["Neihu", "Songshan", "Dazhi", "Wenshan","Xizhi", "Shihding", "Shenkeng"]
+    obs_years = ["2016", "2017", "2018", "2019", "2020"]
+    with multiprocessing.Pool(processes=3) as pool:
+        results = pool.starmap(merge_names, product(obs_names, obs_years))
+        print(results)
+
