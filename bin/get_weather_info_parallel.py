@@ -73,8 +73,8 @@ def main(obs_name = "Neihu", obs_year = "test"):
     "2017": (datetime.date(2017, 1, 1), datetime.date(2017, 12, 31)),
     "2018": (datetime.date(2018, 1, 1), datetime.date(2018, 12, 31)),
     "2019": (datetime.date(2019, 1, 1), datetime.date(2019, 12, 31)),
-    "2020": (datetime.date(2020, 1, 1), datetime.date(2020, 6, 30)),
-    "test": (datetime.date(2020, 7, 1), datetime.date(2020, 7, 3)),
+    "2020": (datetime.date(2020, 1, 1), datetime.date(2020, 12, 31)),
+    "2021": (datetime.date(2021, 1, 1), datetime.date(2021, 1, 31)),
     }
     
     weather_info_dict = dict()
@@ -122,7 +122,7 @@ def main(obs_name = "Neihu", obs_year = "test"):
 
 if __name__ == "__main__":
     obs_names = ["Neihu", "Songshan", "Dazhi", "Wenshan","Xizhi", "Shihding", "Shenkeng"]
-    obs_years = ["2016", "2017", "2018", "2019", "2020"]
+    obs_years = ["2016", "2017", "2018", "2019", "2020", "2021"]
 
     with Pool(12) as p:
         p.starmap(main, product(obs_names, obs_years))
